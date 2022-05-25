@@ -28,6 +28,8 @@ namespace Zadanie_n5
         {
             dataGridView1.RowCount = 15; //Указываем количество строк
             dataGridView1.ColumnCount = 15; //Указываем количество столбцов
+            dataGridView2.RowCount = 15; //Указываем количество строк
+            dataGridView2.ColumnCount = 15; //Указываем количество столбцов
             int[,] A = new int[15, 15]; //Инициализируем массив
             int i, j;
             int[][] help = new int[15][];
@@ -46,25 +48,20 @@ namespace Zadanie_n5
                 for (j = 0; j < 15; j++)
                     dataGridView1.Rows[i].Cells[j].Value = Convert.ToString(A[i, j]);
 
-            ////dataGridView2
-            //int text = Convert.ToInt32(textBox1.Text);
-            //for (i = 0; i < 15; i++)
-            //{
-            //    for (j = 0; j < 15; j++)
-            //    {
-            //        if (A[i, j] % text == 0)
-            //        {
-            //            S = A[i, j];
-            //            dataGridView2.Rows[i].Cells[j].Value = Convert.ToString(S);
-
-            //        }
-            //        else
-            //        {
-            //            S = 0;
-            //            dataGridView2.Rows[i].Cells[j].Value = Convert.ToString(S);
-            //        }
-            //    }
-            //}
+            //dataGridView2
+            int text = Convert.ToInt32(textBox1.Text);
+            for (i = 0; i < 15; i++)
+                for (j = 0; j < 15; j++)
+                    if (A[i, j] % text == 0)
+                    {
+                        help[i][j] = A[i, j];
+                        dataGridView2.Rows[i].Cells[j].Value = Convert.ToString(help[i][j]);
+                    }
+                    //else
+                    //{
+                    //    help[i][j] = 0;
+                    //    dataGridView2.Rows[i].Cells[j].Value = Convert.ToString(help[i][j]);
+                    //}
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
