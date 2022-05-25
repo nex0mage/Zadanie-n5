@@ -33,7 +33,6 @@ namespace Zadanie_n5
             int[,] A = new int[15, 15]; //Инициализируем массив
             int i, j;
             int[][] help = new int[15][];
-            int S;
             for (i = 0; i < 15; i++)
             {
                     help[i] = new int[15];
