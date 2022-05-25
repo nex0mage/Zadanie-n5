@@ -28,17 +28,13 @@ namespace Zadanie_n5
         {
             dataGridView1.RowCount = 15; //Указываем количество строк
             dataGridView1.ColumnCount = 15; //Указываем количество столбцов
-            double[,] A = new double[15, 15]; //Инициализируем массив
+            int[,] A = new int[15, 15]; //Инициализируем массив
             int i, j;
-            double[][] help = new double[16][];
-            for (i = 0; i < 16; i++)
+            int[][] help = new int[15][];
+            int S;
+            for (i = 0; i < 15; i++)
             {
-                    help[i] = new double[16];
-            }
-            void func(int a, int b, double c)
-            {
-                
-                dataGridView2.Rows[a].Cells[b].Value = Convert.ToString(help[a][b]);
+                    help[i] = new int[15];
             }
             //Заполняем матрицу случайными числами
             Random rand = new Random();
@@ -50,24 +46,25 @@ namespace Zadanie_n5
                 for (j = 0; j < 15; j++)
                     dataGridView1.Rows[i].Cells[j].Value = Convert.ToString(A[i, j]);
 
-            //dataGridView2
-            double text =Convert.ToDouble(textBox1.Text)
-                ;
-            for (i = 0; i < 15; i++)
-            {
-                for (j = 0; j < 15; j++)
-                {
-                    if (A[i, j] % text == 0)
-                    {
-                        double S = A[i, j];
-                        func(i, j, S);
-                    }
-                    else
-                    {
-                        func(i, j, 0.1);
-                    }
-                }
-            }
+            ////dataGridView2
+            //int text = Convert.ToInt32(textBox1.Text);
+            //for (i = 0; i < 15; i++)
+            //{
+            //    for (j = 0; j < 15; j++)
+            //    {
+            //        if (A[i, j] % text == 0)
+            //        {
+            //            S = A[i, j];
+            //            dataGridView2.Rows[i].Cells[j].Value = Convert.ToString(S);
+
+            //        }
+            //        else
+            //        {
+            //            S = 0;
+            //            dataGridView2.Rows[i].Cells[j].Value = Convert.ToString(S);
+            //        }
+            //    }
+            //}
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
