@@ -56,11 +56,18 @@ namespace Zadanie_n5
                         help[i][j] = A[i, j];
                         dataGridView2.Rows[i].Cells[j].Value = Convert.ToString(help[i][j]);
                     }
-                    //else
-                    //{
-                    //    help[i][j] = 0;
-                    //    dataGridView2.Rows[i].Cells[j].Value = Convert.ToString(help[i][j]);
-                    //}
+
+                    else if (j < 15)
+                    {
+                        for (int sa = j; sa < 15; sa++)
+                        {
+                            if (A[i, sa] % text == 0)
+                            {
+                                help[i][j] = A[i, j];
+                                dataGridView2.Rows[i].Cells[j].Value = Convert.ToString(help[i][j]);
+                            }
+                        }
+                    }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
